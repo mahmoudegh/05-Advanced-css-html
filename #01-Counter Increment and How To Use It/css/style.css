@@ -1,0 +1,69 @@
+body
+{
+	/*Default Value Is 0 (Count Start From 1)*/
+	/*It Also Accept Negative Numbers*/
+	/*Add Another Counter Without Comma(,)*/
+	counter-reset: mahmoud-counter 0  second-counter 2;
+}
+
+ul
+{
+	list-style: none;
+	padding:0;
+	margin: 0
+}
+
+ul li:before
+{
+	/*Default Value Is 1*/
+	/*It Also Accept Negative Numbers*/
+	/*It Count By Value That I Detected*/
+	counter-increment: mahmoud-counter 1;
+	/*We Can Change The Style Of Counter*/
+	/*disc, circle, square, decimal, decimal-leading-zero,
+	  lower-roman, upper-roman, lower-greek,
+	  lower-latin, upper-latin, armenian,
+	  georgian, lower-alpha, upper-alpha, none
+	  #Note: The Style Samples Shown Above May Not 
+	  Appear Identically In All Browsers*/
+	content: counter(mahmoud-counter, decimal-leading-zero);
+	width: 20px;
+	height: 20px;
+	background-color: #F00;
+	color: #FFF;
+	border-radius: 50%;
+	text-align: center;
+	padding: 3px;
+	/*This Allow Me To Use Margin*/
+	display: inline-block;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+
+
+.test div
+{
+	width: 200px;
+	margin-bottom: 10px
+}
+
+
+.test div:before
+{
+	counter-increment: second-counter 2;
+	/*I Can Add Content Before The Counter In ("")*/
+	/*The Space After ID=>("ID ") Appear In Page*/
+	content: "ID " counter(second-counter);
+	width: 40px;
+	height: 20px;
+	background-color: #080;
+	color: #FFF;
+	border-radius: 50%;
+	text-align: center;
+	padding: 3px;
+	/*This Allow Me To Use Margin*/
+	display: inline-block;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}

@@ -1,0 +1,10 @@
+/*Not Adviced To Use ID For Styling Elements In CSS*/
+#myID{}
+
+.myClass
+{
+	height: 800px;
+	background-color: #EEE;
+	padding: 10px;
+	margin-bottom: 20px
+}

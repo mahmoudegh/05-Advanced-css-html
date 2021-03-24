@@ -1,0 +1,37 @@
+div
+{
+	/*This Will Inherited To p & h3 If I Didn't
+	  Detect Speacial propereties To Them
+	  (as=> p{font-size: 10px})*/
+	color: #F00;
+
+	/*This Will Inherited To Only p & NOT TO h3 
+	  Because h3 By Default Has Its Owne Font-size, weight*/
+	font-size: 30px; font-weight: bold;
+
+	/*border Is Non Inheritable Proberety*/
+	border: 2px solid #080;
+
+	/*background-color Is Non Inheritable Proberety*/
+	background-color: #EEE;
+	height: 100px;/*Non Inheritable*/
+	margin: 50px;/*Non Inheritable*/
+	padding: 50px;/*Non Inheritable*/
+	text-align: center;/*Inheritable*/
+}
+
+
+/*By Using Keyword Inherit WE Can Inherit Any Prpberty
+  (Even Aginst Default Proberety Of Some Elements
+  OR Aginst The Non Inheritance Of The Proberbty)
+  In Css From Parent To Child*/
+div h3 
+{	/*Inherited From Parent Aginst The Non Inheritance Proberbty
+	  Of The Border*/
+	border: inherit;
+
+	/*Inherited From Parent Aginst Default Proberbty
+	  Of h3*/
+	font-size: inherit
+}
+

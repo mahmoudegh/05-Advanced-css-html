@@ -1,0 +1,59 @@
+div
+{
+	color: #FFF
+}
+
+
+.parent
+{
+	background-color: #F00; overflow: auto
+}
+
+
+/*    
+      This Is The 1st Solution To Fix Float:-
+	  By Using Height (OR min-height) To The Parent 
+	  After Child FloatIt Will Apear Again But 
+	  I Need Static Height (height: 50px;)
+*/
+
+
+/*
+	  This Is The 2nd Solution To Fix Float:-
+	  By Using Empty Div After The Parent 
+	  [<div class="clear"></div>]=>HTML
+	  [.clear{clear: both}]=>CSS
+*/
+
+
+/*    This Is The 3rd Solution To Fix Float:-
+	  By Using Clear Fix Hack 
+	  [Pseudo Element (.parent:after) As Below]
+
+	  .parent:after
+	  {
+		 content: ".";
+		 visibility: hidden;
+		 display: block;
+		 clear: both;
+		 height: 0
+	  }
+*/
+
+
+/*
+	  This Is The 4th Solution To Fix Float:-
+	  By Using (overflow: hidden;) OR
+	  (overflow: auto;)...auto Preferred Than hidden
+*/
+
+
+.child
+{
+	background-color: #00F;
+    margin-bottom: 5px;
+    /*After Float The Height Of Parent Become 0 Because 
+      The Parent Can't See The Child After Float*/
+    float: left;
+    width: 50% 
+}

@@ -1,0 +1,61 @@
+/*The var() function can be used to insert the value of a custom property.*/
+
+/*The var() Function
+  Variables in CSS should be declared within a CSS selector that defines its scope.
+  For a global scope you can use either the :root or the body selector.
+
+  The variable name must begin with two dashes (--) and is case sensitive!
+
+  The syntax of the var() function is as follows: var(custom-name, value)
+
+  Value	             Description
+  custom-name	     Required. The custom property's name (must start with two dashes)
+  value	Optional.    The fallback value (used if the custom property is invalid)
+
+  ##Not Supported In Ie 11
+  ====================================================================================*/
+
+
+/*Global Scope By :root(The Most Global Scope In Dom Tree)*/
+:root
+{
+	/*Can Be Used As Inline Style In HTML fIle (style="--main-color:#080")*/
+	--main-color:#080;
+	--alt-color:#00F;
+}
+
+
+/*Global Scope By body(Less Scope Than :root)*/
+
+/*
+body
+{
+	--main-color:#080;
+	--alt-color:#00F;
+}
+*/
+
+p
+{
+	font-size: 30px;
+	color: var(--main-color)
+}
+
+
+div
+{
+	font-size: 30px;
+	/*This Is Local Scope For This Div And Its Content(<span>)*/
+
+	/*
+	--main-color:#080;
+	--alt-color:#00F;
+	*/
+	color: var(--alt-color)
+}
+
+div span
+{
+	/*Yelloww Is The FallBack Value[If var(--test-color) Not Found]*/
+	background-color: var(--test-color, yellow)
+}

@@ -1,0 +1,6 @@
+/*It Mean All Paragraphs In Parent(Descendant Selector)*/
+.parent p{color: #F00; font-size: 40px}
+
+
+/*It Mean The First And The Last Paragraphs(Direct Child)*/
+.parent >p{color: #00F}

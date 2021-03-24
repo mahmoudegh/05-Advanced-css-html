@@ -1,0 +1,83 @@
+/*
+	Css Positions: [Static | Relative | Absolute | Fixed]
+
+	#Static=> Default Value.
+*/
+body{width: 1750px}
+
+.content
+{
+	width: 500px;
+	margin: 20px auto;
+	padding: 10px;
+	background-color: yellow;
+}
+
+.content >div
+{
+	color: #FFF;
+	padding: 10px;
+	margin-bottom: 10px
+}
+
+.content >div:last-child
+{
+	margin-bottom: 0
+}
+
+
+/*Default*/
+.static
+{
+	background-color: #080;
+	position: static
+}
+
+
+/*Move By Top, Bottom, Left, Right 
+But Keep It's Space In The Workflow*/
+.relative
+{
+	background-color: #F00;
+	position: relative;
+	/*Position Calculated From It's Old Position*/
+	top: 0;/*Default Value Is Auto(The Same AS 0)*/
+	right: 20px;/*Default Value Is Auto(The Same AS 0)*/
+}
+
+
+/*Move By Top, Bottom, Left, Right 
+But Leav It's Space In The Workflow
+So The Container & Othe Divs Behave As It Not Found*/
+.absolute
+{
+	background-color: #00F;
+	position: absolute;
+	/*Position Calculated From The Body 
+	(According To Screen Size) Or 
+	From The First Parent That Has Position Relative*/
+	/*Here The Value 0 Not Tha Same As Auto*/
+	/*The Div Move With The Scroll*/
+	top: 30px;
+    right: 100px
+}
+
+/*Cklick And Hold*/
+.absolute:hover{position: static;}
+
+/*Move By Top, Bottom, Left, Right 
+But Leav It's Space In The Workflow
+So The Container & Othe Divs Behave As It Not Found*/
+.fixed
+{
+	background-color: #000;
+	position: fixed;
+	/*Position Calculated From The Body (According To Screen Size)*/
+	/*Not affected With The First Parent That Has Position Relative*/
+	/*Here The Value 0 Not Tha Same As Auto*/
+	/*The Div Don't Move With The Scroll(Fixed)*/
+	top: 50px;
+	left: -70px
+}
+
+.fixed:hover{left: 0}
